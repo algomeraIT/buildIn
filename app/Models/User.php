@@ -22,16 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
+        'role',
     ];
 
     /**
@@ -56,5 +47,64 @@ class User extends Authenticatable
             ->explode(' ')
             ->map(fn (string $name) => Str::of($name)->substr(0, 1))
             ->implode('');
+    }
+
+    const ROLE_SUPER_ADMIN = 'superAdmin';
+    const ROLE_PRIVATO = 'privato';
+    const ROLE_AZIENDA = 'azienda';
+    const ROLE_ENTE_PUBBLICO = 'ente pubblico';
+    const SUBSCRIPTIONS_SUPER_ADMIN = 'superAdmin';
+    const SUBSCRIPTIONS_BASIC = 'Basic';
+    const SUBSCRIPTIONS_MEDIUM = 'medium';
+    const SUBSCRIPTIONS_PREMIUM = 'premium';
+
+
+    public const ROLES = [
+        self::ROLE_SUPER_ADMIN,
+        self::ROLE_PRIVATO,
+        self::ROLE_AZIENDA,
+        self::ROLE_ENTE_PUBBLICO
+    ];
+
+public const SUBSCRIPTIONS = [
+     self::SUBSCRIPTIONS_SUPER_ADMIN,
+     self::SUBSCRIPTIONS_BASIC,
+     self::SUBSCRIPTIONS_MEDIUM,
+     self::SUBSCRIPTIONS_PREMIUM
+];
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
+    }
+
+    public function userInformation()
+    {
+        return $this->hasOne(UserInformation::class);
+    }
+
+    public function ads()
+    {
+        return $this->hasMany(Ad::class);
+    }
+
+    public function offers()
+    {
+        return $this->hasMany(Offer::class);
+    }
+
+    public function contracts()
+    {
+        return $this->hasMany(Contract::class);
+    }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }

@@ -23,6 +23,74 @@
     --color-zinc-900: #171717;
     --color-zinc-950: #0a0a0a;
 
+    --color-fcf2ff: #FCF2FF;
+    --color-c37cff: #C37CFF;
+    --color-e2f8e2: #E2F8E2;
+    --color-ff8b29: #FF8B29;
+    --color-f6f5ff: #F6F5FF;
+    --color-f2feff: #F2FEFF;
+    --color-b2aee6: #B2AEE6;
+    --color-fdf2f3: #FDF2F3;
+    --color-5dc0c7: #5DC0C7;
+    --color-f0b225: #F0B225;
+    --color-eab115: #EAB115;
+    --color-c45654: #C45654;
+    --color-6f6bb2: #6F6BB2;
+    --color-f2f8fc: #F2F8FC;
+    --color-97c4f0: #97C4F0;
+    --color-78a5d9: #78A5D9;
+    --color-f2fcff: #F2FCFF;
+    --color-ff6817: #FF6817;
+    --color-fdf3e5: #FDF3E5;
+    --color-fdf8ea: #FDF8EA;
+    --color-faf2f0: #FAF2F0;
+    --color-f5fae2: #F5FAE2;
+    --color-f2f6fa: #F2F6FA;
+    --color-eafaf7: #EAFAF7;
+    --color-f0fdeb: #F0FDEB;
+    --color-f7f4ff: #F7F4FF;
+    --color-fbf2ff: #FBF2FF;
+    --color-fff2fe: #FFF2FE;
+    --color-f2f4f8: #F2F4F8;
+    --color-06627e: #06627E;
+    --color-c31414: #C31414;
+    --color-94b40d: #94B40D;
+    --color-1a8671: #1A8671;
+    --color-50bf35: #50BF35;
+    --color-8e5efc: #8E5EFC;
+    --color-ef56e3: #EF56E3;
+    --color-b035de: #B035DE;
+    --color-35b2d0: #35B2D0;
+    --color-f0f6ff: #F0F6FF;
+    --color-f2f3ff: #F2F3FF;
+    --color-525de8: #525DE8;
+    --color-4089ed: #4089ED;
+    --color-f5faf7: #F5FAF7;
+    --color-3bb984: #3BB984;
+    --color-f2fff2: #F2FFF2;
+    --color-6d5c9d: #6D5C9D;
+    --color-f8f5fd: #F8F5FD;
+    --color-fff5f6: #FFF5F6;
+    --color-faeaeb: #FAEAEB;
+    --color-e5323f: #E5323F;
+    --color-30acbc: #30ACBC;
+    --color-39386f: #39386F;
+    --color-f1f0ff: #F1F0FF;
+    --color-b72522: #B72522;
+    --color-514f8d: #514F8D;
+    --color-a11916: #A11916;
+    --color-252451: #252451;
+    --color-232323: #232323;
+    --color-3c3c3c: #3C3C3C;
+    --color-696969: #696969;
+    --color-959595: #959595;
+    --color-bfbfbf: #BFBFBF;
+    --color-dddddd: #DDDDDD;
+    --color-f0f0f0: #F0F0F0;
+    --color-f7f7f7: #F7F7F7;
+    --color-fcfcfc: #FCFCFC;
+
+
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
     --color-accent-foreground: var(--color-white);
@@ -59,6 +127,23 @@ input:focus[data-flux-control],
 textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+
+/* --- Flux: Button --- */
+[data-flux-button] {
+    @apply shadow-none! rounded-sm! *:text-current!;
+}
+
+[data-flux-button][data-variant-filled][data-color-indigo] {
+    @apply bg-f1f0ff text-252451;
+}
+
+[data-flux-button][data-variant-primary][data-color-indigo] {
+    @apply bg-39386f  hover:bg-514f8d;
+}
+
+[data-flux-dropdown][data-open] [data-flux-button][data-open] [data-flux-icon] {
+    @apply transform rotate-180;
 }
 
 /* \[:where(&)\]:size-4 {
